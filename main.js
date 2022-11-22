@@ -1,3 +1,26 @@
+
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+    let email = document.getElementById('email');
+    
+
+const Expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// Letras, guion bajo caracteres especiales. 
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+
+
+const ValidarCampos = e =>{
+
+    
+
+}
+
+
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -37,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
        
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        setFormMessage(loginForm, "error", "Usuario invalidado o contraseña incorrecta.");
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setInputError(inputElement, "Username must be at least 10 characters in length");
+                setInputError(inputElement, "El usuario ha pasado los 10 caracteres.");
             }
         });
 
