@@ -1,4 +1,6 @@
-let username = document.getElementById('username');
+
+    let username = document.getElementById('username');
+
     let password = document.getElementById('password');
     let email = document.getElementById('email');
     
