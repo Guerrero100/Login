@@ -6,9 +6,9 @@ function setFormMessage(formElement, type, message) {
     messageElement.classList.add(`form__message--${type}`);
 }
 
-function setInputError(inputElement, message) {
+function setInputError(inputElement, mensaje) {
     inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+    inputElement.parentElement.querySelector(".form__input-error-message").textContent = mensaje;
 }
 
 function clearInputError(inputElement) {
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
        
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        setFormMessage(loginForm, "error", "Usuario o Contraseña invalida o incorrecta");
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setInputError(inputElement, "Username must be at least 10 characters in length");
+                setInputError(inputElement, "El usuario debe tener como minimo 10 caracteres");
             }
         });
 
