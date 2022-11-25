@@ -7,53 +7,80 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
+    
     <div class="container">
+
+        <!-- Aqui empieza el formulario de el login -->
         <form class="form" id="login">
             <h1 class="form__title">Login</h1>
             <div class="form__message form__message--error"></div>
             <div class="formulario-input-group">
-                <input type="text" class="formulario-input" autofocus placeholder="Usuario o Correo">
+
+                <!-- Aqui ingresa con usuario o correo  -->
+                <input type="text" class="formulario-input" id="formulario-input" name="usuario" autofocus placeholder="Usuario o Correo">
                 <div class="form-input-error-message"></div>
             </div>
+
+            <!-- Contraseña -->
             <div class="formulario-input-group">
                 <input type="password" class="formulario-input" autofocus placeholder="contraseña">
                 <div class="form__input-error-message"></div>
             </div>
+            <!-- Boton para acceder al menu principal -->
             <button class="form__button" type="submit">Continuar</button>
             <p class="form__text">
 
-                <a href="#" class="form__link">Has olvidado tu contraseña?</a>
+                <!-- Link para restablecer la contraseña -->
+                <a href="./" class="form__link" id="linkCreateAccount">Has olvidado tu contraseña?</a>
+            </p>
 
-                <a href="./" class="form__link" id="linkCreateAccount">Forgot your password?</a>
-            </p>
+            <!-- Link para crear cuenta e ir al registro -->
             <p class="form__text">
-                <a class="form__link" href="./" id="linkCreateAccount">No tienes cuenta? Create Una </a>
+                <a class="form__link" href="./" id="linkCreateAccount">No tienes cuenta? Create Una aqui.</a>
             </p>
+
+            <!-- Registro de un usuario -->
         </form>
         <form class="form form--hidden" id="createAccount">
             <h1 class="form__title">Crear Cuenta</h1>
             <div class="form__message form__message--error"></div>
             <div class="form-input-group">
+
+                <!-- Crear Usuario -->
                 <input type="text" id="signupUsername" class="formulario-input" autofocus placeholder="Username">
                 <div class="formulario__input-error-message"></div>
             </div>
+
+            <!-- Correo -->
             <div class="formulario-input-group">
                 <input type="text" class="formulario-input" autofocus placeholder="Email Address">
                 <div class="formulario-input-error-message"></div>
             </div>
+
+            <!-- Aqui el usuario pone la contraseña que se desee -->
             <div class="formulario-input-group">
                 <input type="password" class="formulario-input" autofocus placeholder="Password">
                 <div class="formulario-input-error-message"></div>
             </div>
+
+            <!-- Confirmar contraseña  -->
             <div class="formulario-input-group">
                 <input type="password" class="formulario-input" autofocus placeholder="Confirm password">
                 <div class="formulario-input-error-message"></div>
+                
+                <!-- Aqui se termina el registro -->
             </div>
+
+            <!-- Boton para acceder a el login y terminar el Registro  -->
             <button class="form__button" type="submit">Continuar</button>
             <p class="form__text">
+
+                <!-- Link Para acceder a el login  -->
                 <a class="form__link" href="./" id="linkLogin">Ya tienes tu cuenta? Accede Ahora mismo</a>
             </p>
         </form>
     </div>
+
+    <!-- Aqui se termina el formulario -->
     <script src="./main.js"></script>
 </body>

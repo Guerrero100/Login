@@ -17,7 +17,15 @@ const Expresiones = {
 
 const ValidarCampos = e =>{
 
-    
+    switch (e.target.name){
+        case "usuario":
+
+        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+
+        break;
+
+
+    }
 
 }
 
