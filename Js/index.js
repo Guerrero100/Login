@@ -3,16 +3,26 @@
     let formulario = document.getElementById('formulario');
     let password = document.getElementById('password');
     let email = document.getElementById('email');
+    let inputs = document.getElementsByTagName('formulario-input-group');
     
 
 const Expresiones = {
+
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
+	password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,18}$/, // 8 a 16 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// Letras, guion bajo caracteres especiales. 
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
+
+const campos = e => {
+
+    usuario = false,
+    password = false,
+    correo = false,
+    telefono = false
+}
 
 
 const ValidarCampos = e =>{
@@ -25,8 +35,8 @@ const ValidarCampos = e =>{
 
         break;
 
-        case "usuario":
-        ValidarCampos(Expresiones.usuario, e.target, '');
+        case "correo":
+        ValidarCampos(Expresiones.usuario, e.target, 'correo');
 
         break;
 
@@ -53,7 +63,6 @@ const ValidarCampos = e =>{
     }
 
 }
-
 
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
