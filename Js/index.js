@@ -1,6 +1,6 @@
 
     let username = document.getElementById('username');
-
+    let formulario = document.getElementById('formulario');
     let password = document.getElementById('password');
     let email = document.getElementById('email');
     
@@ -16,14 +16,39 @@ const Expresiones = {
 
 
 const ValidarCampos = e =>{
+    Expresiones.preventDefault();
 
-    switch (e.target.name){
+    switch(e.target.name){
+
         case "usuario":
-
         ValidarCampos(Expresiones.usuario, e.target, 'usuario');
 
         break;
 
+        case "usuario":
+        ValidarCampos(Expresiones.usuario, e.target, '');
+
+        break;
+
+        case "usuario":
+        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+
+        break;
+
+        case "usuario":
+        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+
+        break;
+
+        case "usuario":
+        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+
+        break;
+
+        case "usuario":
+        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+
+        break;
 
     }
 
