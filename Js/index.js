@@ -1,28 +1,19 @@
 
+    /* Declaración de el formualario completo  */
     let username = document.getElementById('username');
     let formulario = document.getElementById('formulario');
     let password = document.getElementById('password');
     let email = document.getElementById('email');
-    let inputs = document.getElementsByTagName('formulario-input-group');
     
 
 const Expresiones = {
-
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,18}$/, // 8 a 16 digitos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// Letras, guion bajo caracteres especiales. 
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
-
-const campos = e => {
-
-    usuario = false,
-    password = false,
-    correo = false,
-    telefono = false
-}
 
 
 const ValidarCampos = e =>{
@@ -30,61 +21,58 @@ const ValidarCampos = e =>{
 
     switch(e.target.name){
 
-        case "usuario":
+        case "username":
         ValidarCampos(Expresiones.usuario, e.target, 'usuario');
 
         break;
 
-        case "correo":
-        ValidarCampos(Expresiones.usuario, e.target, 'correo');
+        case "email":
+        ValidarCampos(Expresiones.email, e.target, 'email');
 
         break;
 
-        case "usuario":
-        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+        case "password":
+        ValidarCampos(Expresiones.password, e.target, 'contraseña');
+                         ValidarPassword2();
+        break;
+
+        case "password2":
+                        ValidarPassword2();
 
         break;
 
-        case "usuario":
-        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
+        case "telefono":
+        ValidarCampos(Expresiones.telefono, e.target, 'usuario');
 
         break;
 
-        case "usuario":
-        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
-
-        break;
-
-        case "usuario":
-        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
-
-        break;
 
     }
 
 }
 
+
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
+    const messageElement = formElement.querySelector(".formulario__message");
 
     messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
+    messageElement.classList.remove("formulario__message--success", "formulario__message--error");
     messageElement.classList.add(`form__message--${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+    inputElement.classList.add("formulario__input--error");
+    inputElement.parentElement.querySelector(".formulario__input-error-message").textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+    inputElement.classList.remove("formulario__input--error");
+    inputElement.parentElement.querySelector(".formulario__input-error-message").textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
-    const createAccountForm = document.querySelector("#createAccount");
+    const createAccountForm = document.querySelector("#CreateAccount");
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
