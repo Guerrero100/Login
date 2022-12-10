@@ -11,43 +11,43 @@
     <div class="container">
 
         <!-- Aqui empieza el formulario de el login -->
-        <form class="formulario" id="formulario">
+        <form class="formulario" id="login">
             <div  class="formulario-title"><h3>Login</h3></div>
             <div class="formulario-usuario" id="formulario-usuario">
-                <img src="./Img/usuario.png">
+                <img src="./Img/usuario.png" class="img" id="img">
             </div>
-            <div class="form__message form__message--error"></div>
+            <div class="formulario-message formulario-message--error"></div>
             <div class="formulario-input-group">
 
                 <!-- Aqui ingresa con usuario o correo  -->
                 <input type="text" class="formulario-input" id="formulario-input" name="usuario" autofocus placeholder="Usuario o Correo">
-                <div class="form-input-error-message"></div>
+                <div class="formulario-input-error-message"></div>
             </div>
 
             <!-- Contraseña -->
             <div class="formulario-input-group">
                 <input type="password" class="formulario-input" autofocus placeholder="contraseña">
-                <div class="form__input-error-message"></div>
+                <div class="formulario-input-error-message"></div>
             </div>
             <!-- Boton para acceder al menu principal -->
             <button class="formulario-button" type="submit">Continuar</button>
-            <p class="form__text">
+            <p class="formulario-text">
 
                 <!-- Link para restablecer la contraseña -->
-                <a href="#" class="form__link" >Has olvidado tu contraseña?</a>
+                <a href="#" class="formulario-link" >Has olvidado tu contraseña?</a>
             </p>
 
             <!-- Link para crear cuenta e ir al registro -->
-            <p class="form__text">
-                <a class="formulario-link" href="./" id="CreateAccount">No tienes cuenta? Create Una aqui.</a>
+            <p class="formulario-text">
+                <a class="formulario-link" href="./" id="linkCreateAccount">No tienes cuenta? Create Una aqui.</a>
             </p>
 
                            
            <!-- Registro de un usuario -->
         </form>
-        <form class="form form--hidden" id="createAccount">
-            <h1 class="form__title">Crear Cuenta</h1>
-            <div class="form__message form__message--error"></div>
+        <form class="form formulario-hidden" id="createAccount">
+            <h1 class="formulario-title">Crear Cuenta</h1>
+            <div class="formulario-message formuario-message--error"></div>
             <div class="formulario-input-group">
 
                 <!-- Crear Usuario -->
@@ -77,14 +77,14 @@
 
             <!-- Boton para acceder a el login y terminar el Registro  -->
             <button class="formulario-button" type="submit">Continuar</button>
-            <p class="form__text">
+            <p class="formulario-text">
 
                 <!-- Link Para acceder a el login  -->
-                <a class="form__link" href="./" id="linkLogin">Ya tienes tu cuenta? Accede Ahora mismo</a>
+                <a class="formulario-link" href="./" id="linkLogin">Ya tienes tu cuenta? Accede Ahora mismo</a>
             </p>
         </form>
     </div>
 
     <!-- Aqui se termina el formulario -->
-    <script src="./main.js"></script>
+    <script src="./Js/index.js"></script>
 </body>

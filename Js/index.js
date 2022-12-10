@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
+        loginForm.classList.add("formulario-hidden");
+        createAccountForm.classList.remove("formulario-hidden");
     });
 
     document.querySelector("#linkLogin").addEventListener("click", e => {
