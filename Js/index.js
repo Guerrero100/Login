@@ -15,64 +15,27 @@ const Expresiones = {
 }
 
 
-
-const ValidarCampos = e =>{
-    Expresiones.preventDefault();
-
-    switch(e.target.name){
-
-        case "username":
-        ValidarCampos(Expresiones.usuario, e.target, 'usuario');
-
-        break;
-
-        case "email":
-        ValidarCampos(Expresiones.email, e.target, 'email');
-
-        break;
-
-        case "password":
-        ValidarCampos(Expresiones.password, e.target, 'contraseña');
-                         ValidarPassword2();
-        break;
-
-        case "password2":
-                        ValidarPassword2();
-
-        break;
-
-        case "telefono":
-        ValidarCampos(Expresiones.telefono, e.target, 'usuario');
-
-        break;
-
-
-    }
-
-}
-
-
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".formulario__message");
+    const messageElement = formElement.querySelector(".formulario-mensaje");
 
     messageElement.textContent = message;
-    messageElement.classList.remove("formulario__message--success", "formulario__message--error");
-    messageElement.classList.add(`form__message--${type}`);
+    messageElement.classList.remove("formulario-mensaje-success", "formulario-mensaje-error");
+    messageElement.classList.add(`formulario-mensaje-${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("formulario__input--error");
-    inputElement.parentElement.querySelector(".formulario__input-error-message").textContent = message;
+    inputElement.classList.add("formulario-input-error");
+    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("formulario__input--error");
-    inputElement.parentElement.querySelector(".formulario__input-error-message").textContent = "";
+    inputElement.classList.remove("formulario-input-error");
+    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
-    const createAccountForm = document.querySelector("#CreateAccount");
+    const createAccountForm = document.querySelector("#createAccount");
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -82,22 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector("#linkLogin").addEventListener("click", e => {
         e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
+        createAccountForm.classList.add("formulario-hidden");
+        loginForm.classList.remove("formulario-hidden");
     });
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-       
-
+        // Perform your AJAX/Fetch login
         setFormMessage(loginForm, "error", "Usuario invalidado o contraseña incorrecta.");
     });
 
-    document.querySelectorAll(".form__input").forEach(inputElement => {
+    document.querySelectorAll(".formulario-input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
-            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setInputError(inputElement, "El usuario ha pasado los 10 caracteres.");
+            if (e.target.id === "IngresarUsuario" && e.target.value.length > 0 && e.target.value.length < 10) {
+                setInputError(inputElement, "El usuario debe tener minimo los 10 caracteres.");
             }
         });
 
