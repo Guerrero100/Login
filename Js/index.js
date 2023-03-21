@@ -32,7 +32,7 @@ const validarFormulario = (e) => {
             validarpassword2();
     break;
     case "password2":
-    |       validarpassword2();
+           validarpassword2();
     break;
    }
     
